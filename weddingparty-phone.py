@@ -10,9 +10,10 @@ import os
 DEBUG = False
 pickup_state = False
 
-REC_OUTPUT_FOLDER = "./audio/output/"
-START_REC_AUDIOMESSAGE = './audio/src/leave-a-message.wav'
-STOP_REC_AUDIOMESSAGE = './audio/src/end-of-recording.wav'
+project_dirname = os.path.dirname(__file__)
+REC_OUTPUT_FOLDER = os.path.join(project_dirname, "./audio/output/")
+START_REC_AUDIOMESSAGE = os.path.join(project_dirname, './audio/src/leave-a-message.wav')
+STOP_REC_AUDIOMESSAGE = os.path.join(project_dirname, './audio/src/end-of-recording.wav')
 
 # GPIO setup
 GPIO.setmode(GPIO.BCM)                              # Use BCM numbering
@@ -46,6 +47,8 @@ def get_state():
           
 def play_message(play_filename):
     OUTPUT_CHUNK = 2048 #1024
+
+    time.sleep(1)
 
     with wave.open(play_filename, 'rb') as wf:        
         p = pyaudio.PyAudio()                                               # Instantiate PyAudio and initialize PortAudio system resources (1)
