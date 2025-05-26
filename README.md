@@ -19,7 +19,7 @@ A retro-style voicemail recorder using a Raspberry Pi 3. Detects when a handset 
 
 ```bash
 sudo apt update
-sudo apt install git wget curl python3 python3-pip python3-venv libcurl4-openssl-dev libssl-dev alsa-utils portaudio19-dev
+sudo apt install git wget curl python3 python3-pip python3-venv libcurl4-openssl-dev libssl-dev alsa-utils portaudio19-dev build-essential -y
 ```
 
 ### Python setup:
